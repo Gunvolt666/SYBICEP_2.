@@ -1,0 +1,87 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <meta charset="utf-8">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" type="text/css" href="css/ColumnPrincipal.css">
+      <link rel="stylesheet" type="text/css" href="css/ExpandingPrincipal.css">
+     <link rel="stylesheet" type="text/css" href="css/MainNavbar.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+      <div class="wrapper">
+        <header>
+          <nav>
+            <div class="menu-icon">
+              <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">
+              SYBICEP
+            </div>
+            <div class="menu">
+              <ul>
+                <li><a href="FormularioAlumno.php">Registrarse</a></li>
+                <li><a href="">Iniciar Sesion</a></li>
+                <li><a href="">Nosotros</a></li>
+                
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <h2>Tu biblioteca en linea</h2>
+         <div class="row divBlur">
+           <div id="box">
+             <span class="txt">Yo</span>
+           <span class="♥" >♥</span>
+          <span class="txt" contenteditable spellcheck="false">Leer</span>
+           </div>
+           
+            <div class="column1" style="background-color:#aaa;">
+              <h2>Leer abre muchas puertas</h2>
+              <p>“Un intelectual es el que dice una cosa simple de un modo complicado. Un artista es el que dice una cosa complicada de un modo simple.“</p>
+            </div>
+            <div class="column1" style="background-color:#bbb;">
+              <h2>Leer es poder</h2>
+              <p>“No tenía miedo a las dificultades: lo que la asustaba era la obligación de tener que escoger un camino. Escoger un camino significaba abandonar otros.”Paulo Coelho</p>
+            </div>
+            <div class="column1" style="background-color:#ccc;">
+              <h2>Vive miles de aventuras sin salir de casa</h2>
+              <p>“Y una vez que la tormenta termine, no recordarás como lo lograste, como sobreviviste. Ni siquiera estarás seguro si la tormenta ha terminado realmente. Pero una cosa si es segura. Cuando salgas de esa tormenta, no serás la misma persona que entró en ella. De eso se trata esta tormenta.”Haruki Murakami</p>
+            </div>
+            <div class="column1" style="background-color:#ddd;">
+              <h2>El conocimiento nos hara libres</h2>
+              <p>“He aprendido a no intentar convencer a nadie. El trabajo de convencer es una falta de respeto, es un intento de colonización del otro.”José Saramago</p>
+            </div>
+          </div>
+          
+      </div>
+    </body>
+    <script src="js/ExpandingPrincipal.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+        $(".menu-icon").on("click", function()
+        {
+          $("nav ul").toggleClass("showing");
+        });
+      });
+
+      $(window).on("scroll", function()
+      {
+        if ($(window).scrollTop()) {
+          $('nav').addClass('black');
+        }
+        else
+        {
+          $('nav').removeClass('black')
+        }
+      })
+    </script>
+  </html>
+        
