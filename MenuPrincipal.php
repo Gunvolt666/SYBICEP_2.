@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -49,7 +48,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs">GUNVOLT</span>
+                  <span class="hidden-xs"><?php echo $_SESSION['usuario']['nombre'];  ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->

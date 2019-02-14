@@ -4,7 +4,12 @@ require ('../clases/maestro.class.php');
 
 $Maestro = new Maestro();
 
-$action = $_POST['action'];
+//if (isset($_POST['action']))
+
+$action = $_POST['action'];	
+
+
+
 
 if (isset($_POST['info'])) {
 	$info = $_POST['info'];

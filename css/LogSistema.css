@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body {
-  background: url(logotipo.jpg);
+  background: url(Net.jpg);
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
 }
@@ -71,7 +71,7 @@ h1
 .login input[type="password"] {
   background: #fff;
   border-color: #bbb;
-  color: #555;
+  color: #FFF;
    background: rgba(0,0,0,0.3);
 }
 
@@ -79,7 +79,7 @@ h1
 .login input[type="text"]:focus,
 .login input[type="password"]:focus {
   border-color: #888;
-
+  
 }
 
 .login input[type="submit"] {

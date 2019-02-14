@@ -2,8 +2,9 @@ body
 {
 	margin:0;
 	padding: 0;
-	background: url(logotipo.jpg);
-	background-size: cover;
+	height: 520px;
+	background: url(london.jpg) 50% 50%;
+	background-size: auto absolute;
 	background-position: center;
 	font-family: sans-serif;
 }

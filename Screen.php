@@ -1,35 +1,65 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="en">
+
 <head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/Screen.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<meta charset="utf-8">
+
+<title>Mi Portal</title>
+
+<meta name="description" content="Responsive Header Nav">
+
+<meta name="author" content="Treehouse">
+
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+
+<link rel="stylesheet" href="css/Screen.css">
+
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+<script src="js/Screen.js"></script>
+
 </head>
+
 <body>
+
+<header>
+
+<a href="#" id="logo">SEARCH YOUR BOOK</a>
+
+<nav>
+
+<a href="#" id="menu-icon"></a>
+
 <ul>
-	<li><a>Inicio</a></li>
-	<li><a href="">Como funciona?</a>
-		<ul>
-			<li><a href="">QR</a></li>
-			<li><a href="">QR</a></li>
-		</ul>
-	</li>
-	<li><a href="">Mis Libros</a>
-		<ul>
-			<li>Apartados</li>
-			<li>Dar detalle</li>
-		</ul>
-	</li>
-	<li><a href="">Nosotros</a>
-		<ul>
-			<li>Carreras</li>
-		</ul>
-	</li>
+
+<li><a href="#" class="current">INICIO</a></li>
+<li><a href="#">COMO FUNCIONA?</a></li>
+<li><a href="#">LIBROS</a></li>
+<li><a href="#">MIS QR</a></li>
+<li><a href="#">CONTACTO</a></li>
+
 </ul>
-<div id="comentarios">
-	
-</div>
-<button>Mostrar Más</button>
+
+</nav>
+
+</header>
+
+<section>
+
+<img src="css/ICEP.png" alt="Respond" />
+
+<h1>Libros recientes</h1>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+</section>
+
 </body>
+
 </html>

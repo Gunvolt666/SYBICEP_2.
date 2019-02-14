@@ -1,33 +1,30 @@
 <?php
+    $error='';
+    if( !isset( $_SESSION ) ) session_start();
 
-session_start();
-if (isset($_SESSION['usuario'])) {
-  if (($_SESSION['usuario']['tipo'] == "Admin")) {
-    header('Location: MenuPrincipal.php');
-  }
-  elseif ($_SESSION['usuario']['tipo'] == "Usuario") {
-    header('Location: MenuPrincipal.php');
-  }
-}
+    if( !isset( $_SESSION['usuario'] ) ) 
+    {
 
+    }
+    else exit( header('Location: home.php') );
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Iniciar Sesion</title>
 	<link rel="stylesheet" type="text/css" href="css/LogSistema.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="login">
-	<h1>Acceso al Sistema SYBICEP</h1>
+	<h1><strong>Acceso al Sistema SYBICEP</strong></h1>
   <div class="login-triangle"></div>
   
   <h2 class="login-header">Iniciar Sesion</h2>
 
-  <form class="login-container">
-    <p><input type="text" placeholder="Escriibe tu usuario"></p>
-    <p><input type="password" placeholder="Escribe tu contraseña"></p>
+  <form action="metodos/LogSesionesAdmin.php" method="POST" class="login-container">
+    <p><input type="text" name="usuario" placeholder="Escribe tu usuario"></p>
+    <p><input type="password" name="contra_admin" placeholder="Escribe tu contraseña"></p>
     <p><input type="submit" value="ACCEDER"></p>
   </form>
 </div>

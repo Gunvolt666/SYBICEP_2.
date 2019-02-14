@@ -23,7 +23,8 @@ class Maestro extends MySQL
 	}
 	public function busqueda($info)
 	{
-		$consulta = "SELECT id_maestro, CONCAT(carrera,''telefono,''nombre) nombre, telefono, carrera, usuario FROM maestros WHERE nombre LIKE '%{$info}' OR telefono LIKE '%{$info}%'";
+		$consulta = "SELECT id_maestro, CONCAT(usuario,' ',carrera,' ',telefono,' ',nombre) nombre, telefono, carrera, usuario FROM maestros WHERE nombre LIKE '%{$info}%' OR usuario LIKE '%{$info}%'";
+
 		return  $this->query_row($consulta);
 	}
 }

@@ -77,6 +77,7 @@ $(document).on('change', '#select_status', function(e){
 
 
 $(document).on('keyup', '#txt_busqueda', function(e){
+	
 	$.ajax({
 		url:'routes/routeUsuarios.php',
 		type:'POST',
@@ -88,7 +89,7 @@ $(document).on('keyup', '#txt_busqueda', function(e){
 		},
 		error: function(error){
 			console.log(error);
-			toast1("Error!", error, 8000, "error");
+			//toast1("Error!", error, 8000, "error");
 			// removeSpinner();
 		},
 		success: function(data){

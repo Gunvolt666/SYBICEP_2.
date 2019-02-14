@@ -23,7 +23,8 @@ class Usuarios extends MySQL
 	}
 	public function busqueda($info)
 	{
-		$consulta = "SELECT id_usuario, CONCAT(usuario,''nombre) nombre, usuario FROM administrador WHERE nombre LIKE '%{$info}' OR usuario LIKE '%{$info}%'";
+
+		$consulta = "SELECT id_admin, CONCAT(usuario,' ',nombre) nombre, usuario FROM administrador WHERE nombre LIKE '%{$info}' OR usuario LIKE '%{$info}%'";
 		return  $this->query_row($consulta);
 	}
 	public function Crear()

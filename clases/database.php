@@ -9,7 +9,7 @@ class MiDB
 	private $localhost ="localhost";
 	private $usuario = "root";
 	private $contrasena = "";
-	private $BD = "sybicep";
+	public $BD = "sybicep";
 
 	function __construct()
 	{
