@@ -36,6 +36,21 @@ body
 		margin-top: 120px;
 	}
 }
+.select option
+{
+	color: #333;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+.select
+{
+	display: block;
+	text-align: left;
+	border:1px solid gray;
+	margin: 8px 0;
+	padding: 12px 18px;
+	border-radius: 8px;
+}
 .contact-form h1
 {
 	margin-top: 0;

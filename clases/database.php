@@ -24,7 +24,7 @@ class MiDB
 	}
 	public function escape($var)
 	{
-		$return = mysql_real_escape_string($this->conexion, $var);
+		$return = mysqli_real_escape_string($this->conexion, $var);
 		return $return;
 	}
 	public function createAlumno($Nombre, $Carrera, $Telefono, $usuario_alumno, $pass_alumno)

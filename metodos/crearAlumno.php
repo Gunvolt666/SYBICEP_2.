@@ -2,7 +2,7 @@
 
 include ("../clases/database.php");
 
-$alumnos = new Database();
+$alumnos = new MiDB();
 
 if (isset($_POST) && !empty($_POST)) {
 	$Nombre = $alumnos->escape($_POST['Nombre']);
@@ -14,6 +14,7 @@ if (isset($_POST) && !empty($_POST)) {
 	$resultado = $alumnos->createAlumno($Nombre, $Telefono, $Carrera, $usuario_alumno, $pass_alumno);
 	if ($resultado) {
 		$mensaje = "Se a registrado con exito";
+
 		$class = "alert alert-success";
 
 	}
@@ -26,9 +27,9 @@ if (isset($_POST) && !empty($_POST)) {
 
 ?>
 <div class="<?php echo $class?>">
-				  <?php echo $message;?>
+				  <?php echo $mensaje;?>
 				</div>	
 					<?php
-				}
+				
 	
 			?>

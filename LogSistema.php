@@ -1,13 +1,4 @@
-<?php
-    $error='';
-    if( !isset( $_SESSION ) ) session_start();
 
-    if( !isset( $_SESSION['usuario'] ) ) 
-    {
-
-    }
-    else exit( header('Location: home.php') );
-?>
 <!DOCTYPE html>
 <html>
 <head>
