@@ -17,7 +17,7 @@ function loadData(){
 	// console.log($('#select_status').val());
 
 	$.ajax({
-		url:'routes/routeMaestros.php',
+		url:'../routes/routeLibros.php',
 		type:'POST',
 		data: {info: filtro, action: "read"},
 		dataType:'JSON',
@@ -65,7 +65,7 @@ $(document).on('change', '#select_status', function(e){
 $(document).on('keyup', '#txt_busqueda', function(e){
 	alert();
 	$.ajax({
-		url:'routes/routeMaestros.php',
+		url:'../routes/routeLibros.php',
 		type:'POST',
 		async: false,
 		data: {info: $(this).val(), action: "busqueda"},

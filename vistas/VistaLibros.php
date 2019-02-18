@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,8 +14,8 @@
     <link rel="stylesheet" href="../css/AdminLTE.min.css">
     
     <link rel="stylesheet" href="../css/_all-skins.min.css">
-    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
 
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
@@ -47,7 +46,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs"><?php echo $_SESSION['usuario']; echo $_SESSION['nombre'] ;  ?>  </span>
+                  <span class="hidden-xs">GUNVOLT</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -108,13 +107,9 @@
                        
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-folder"></i> <span>Archivos y Accesos</span>
+                <i class="fa fa-folder"></i> <span>Archivos</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="VistaUsuarios.php"><i class="fa fa-circle-o"></i>Usuarios del Sistema</a></li>
-                
-              </ul>
               <ul class="treeview-menu">
                 <li><a href=""><i class="fa fa-circle-o"></i> QR</a></li>
                 
@@ -166,6 +161,37 @@
                       <div class="col-md-12">
                               <!--Contenido-->
                               <h3>Contenido</h3>
+                              <div class="container">
+    <!-- <div class="row"> -->
+
+                            <div class="row">
+                              
+                            </div>
+                            <div class="row" style="margin-bottom: 20px">
+                              
+                              <div class="col-xs-4 form-group">
+                                <select name="" id="select_status" class="form-control">
+                                  <option value="2">TODOS</option>
+                                  <option value="1">ACTIVOS</option>
+                                  <option value="0">INACTIVOS</option>
+                                </select>
+                              </div>
+                              <div class="col-xs-4 form-group">
+                                <input type="text" class="form-control" id="txt_busqueda" placeholder="busqueda...">
+                              </div>
+                            </div>
+                            <div id="tableContainer" class="table-responsive row">
+
+                              <table class="table table-striped table-bordered">
+                                <thead id="thead">
+                                </thead>
+                                <tbody id="tbody">
+                                </tbody>
+                              </table>
+
+                                  </div>
+                          <!-- </div> -->
+                        </div>
                               <!--Fin Contenido-->
                            </div>
                         </div>
@@ -190,9 +216,9 @@
       
     
     <script src="../js/jQuery-2.1.4.min.js"></script>
-    
+    <script src="../js/jQueryLibros.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-  
+    <script src="../js/VistaLibros.js"></script>
     <script src="../js/app.min.js"></script>
     
   </body>
