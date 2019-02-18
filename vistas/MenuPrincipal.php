@@ -1,11 +1,11 @@
 
 <?php
 if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 2) {
+    if ($_SESSION["usuario"]["privilegio"] == 1) {
         header("location:MenuPrincipal.php");
     }
 } else {
-    header("location:LogsSistema.php");
+    header("location:../LogSistema.php");
 }
 ?>
 

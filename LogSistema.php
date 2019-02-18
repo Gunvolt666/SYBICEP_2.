@@ -13,9 +13,9 @@
   
   <h2 class="login-header">Iniciar Sesion</h2>
 
-  <form action="metodos/LogSesionesAdmin.php" method="POST" class="login-container">
-    <p><input type="text" name="usuario" placeholder="Escribe tu usuario"></p>
-    <p><input type="password" name="contra_admin" placeholder="Escribe tu contraseña"></p>
+  <form action="metodos/ValidarUsuarios.php" method="POST" class="login-container">
+    <p><input type="text" name="txtUsuario" placeholder="Escribe tu usuario"></p>
+    <p><input type="password" name="txtPassword" placeholder="Escribe tu contraseña"></p>
     <p><input type="submit" value="ACCEDER"></p>
   </form>
 </div>

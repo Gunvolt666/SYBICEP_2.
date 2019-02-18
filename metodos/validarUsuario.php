@@ -4,7 +4,7 @@ include 'LogSesionesAdmin.php';
 session_start();
 $usuario_autenticado=$_SESSION['usuario'];
 
-$sql = mysqli_query(0$db,"SELECT usuario FROM administrador WHERE usuario='$usuario_autenticado' ");
+$sql = mysqli_query($db,"SELECT usuario FROM administrador WHERE usuario='$usuario_autenticado' ");
 
 $row=mysqli_fetch_array($sql,MYSQLI_ASSOC);
 

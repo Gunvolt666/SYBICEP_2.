@@ -1,9 +1,9 @@
 <?php
 
-include 'MySQLclass.php';
+include 'PDOconexion.php';
 include 'UsuarioEntidad.php';
 
-class Usuario extends MySQL
+class Usuarios extends Conexion
 {
     protected static $cnx;
 
