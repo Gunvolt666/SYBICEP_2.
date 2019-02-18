@@ -1,42 +1,46 @@
-jQuery(document).on('submit', '#formlogin', function(event)
-{
-event.preventDefault();
+$(document).ready(function() {
 
-jQuery.ajax({
-	url: '../metodos/LogSesionesAdmin.php',
-	type: 'POST',
-	dataType: 'json',
-	data: $(this).serialize(),
-	beforeSend:function()
-	{
-		$('.botonlogin').val('Autenticando..');
-	}
-})
-.done(function(respuesta) {
-	console.log(respuesta);
-	if (!respuesta.error) {
-		if (respuesta.tipo = 'Admin') 
-		{
-			location.href = '../MenuPrincipal.php';
-		}
-		else if (respuesta.tipo = 'Usuario') 
-		{
-			location.href = '../MenuPrincipal.php'		
-		}
-	}
-	else {
-		$('.error').slideDown('slow');
-		setTimeout(function()
-		{
-			
-		})
-	}
-})
-.fail(function(resp) {
-	console.log(resp.responseText);
-})
-.always(function() {
-	console.log("complete");
+    $("#loginForm").bind("submit", function() {
+
+        $.ajax({
+            type: $(this).attr("method"),
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+            beforeSend: function() {
+                $("#loginForm button[type=submit]").html("enviando...");
+                $("#loginForm button[type=submit]").attr("disabled", "disabled");
+            },
+            success: function(response) {
+                if (response.estado == "true") {
+                    $("body").overhang({
+                        type: "success",
+                        message: "Usuario encontrado, te estamos redirigiendo...",
+                        callback: function() {
+                            window.location.href = "admin.php";
+                        }
+                    });
+                } else {
+                    $("body").overhang({
+                        type: "error",
+                        message: "Usuario o password incorrecto!"
+                    });
+                }
+
+                $("#loginForm button[type=submit]").html("Ingresar");
+                $("#loginForm button[type=submit]").removeAttr("disabled");
+            },
+            error: function() {
+                $("body").overhang({
+                    type: "error",
+                    message: "Usuario o password incorrecto!"
+                });
+
+                $("#loginForm button[type=submit]").html("Ingresar");
+                $("#loginForm button[type=submit]").removeAttr("disabled");
+            }
+        });
+
+        return false;
+    });
+
 });
-
-})

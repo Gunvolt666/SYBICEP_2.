@@ -1,8 +1,14 @@
 
 <?php
-session_start();
-
+if (isset($_SESSION["usuario"])) {
+    if ($_SESSION["usuario"]["privilegio"] == 2) {
+        header("location:MenuPrincipal.php");
+    }
+} else {
+    header("location:LogsSistema.php");
+}
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>

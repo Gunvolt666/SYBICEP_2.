@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-02-2019 a las 00:45:30
+-- Tiempo de generación: 18-02-2019 a las 17:06:48
 -- Versión del servidor: 10.1.33-MariaDB
 -- Versión de PHP: 7.2.6
 
@@ -25,32 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `administrador`
---
-
-CREATE TABLE `administrador` (
-  `id_admin` int(11) NOT NULL,
-  `usuario` varchar(30) DEFAULT NULL,
-  `contra_admin` varchar(20) DEFAULT NULL,
-  `nombre` varchar(35) NOT NULL,
-  `tipo` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `administrador`
---
-
-INSERT INTO `administrador` (`id_admin`, `usuario`, `contra_admin`, `nombre`, `tipo`) VALUES
-(1, 'gunvolt', 'azure', '', ''),
-(2, 'copen', 'blast', 'Akira', 'Admin'),
-(3, 'GV', 'Gabriel Verduzco ', '123456', ''),
-(4, 'Omae Wa', 'Mou Shindeiru', 'nani?!', ''),
-(5, 'CJ', 'Carlos', '9999', ''),
-(6, 'Kalari', 'Payattu', 'nene', '');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `alumnos`
 --
 
@@ -68,7 +42,13 @@ CREATE TABLE `alumnos` (
 --
 
 INSERT INTO `alumnos` (`id_alumno`, `Nombre`, `Telefono`, `Carrera`, `usuario_alumno`, `pass_alumno`) VALUES
-(8, 'Francisco', '3121340885', 'Licenciatura en Derecho', 'Gunvolt', '123456789');
+(8, 'Francisco', '3121340885', 'Licenciatura en Derecho', 'Gunvolt', '123456789'),
+(9, 'Jessica', '', '54644646', 'Cj', '123'),
+(10, 'Jessica', '', '54644646', 'Cj', ''),
+(11, 'Francisco', '', '3121340885', 'Gunvolt', '666'),
+(12, 'Francisco', '', '3121340885', 'Gunvolt', '123'),
+(13, '', 'Derecho', '', '', '5554'),
+(14, 'Jessica', 'Administracion de Empresas', '54644646', 'Cj', '5555555');
 
 -- --------------------------------------------------------
 
@@ -121,15 +101,33 @@ CREATE TABLE `qr` (
   `tipo` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `usuario` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `privilegio` int(2) NOT NULL,
+  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `privilegio`, `fecha_registro`) VALUES
+(1, 'Gabriel', 'gunvolt', '123456', 2, '0000-00-00 00:00:00'),
+(2, 'Francisco', 'Rockman', 'zhayra', 1, '0000-00-00 00:00:00'),
+(3, 'Cris', 'Rockman', 'zhayra', 1, '2019-02-18 16:01:54');
+
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `administrador`
---
-ALTER TABLE `administrador`
-  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indices de la tabla `alumnos`
@@ -156,20 +154,20 @@ ALTER TABLE `qr`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Indices de la tabla `usuarios`
 --
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de la tabla `administrador`
+-- AUTO_INCREMENT de las tablas volcadas
 --
-ALTER TABLE `administrador`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `libros`
@@ -188,6 +186,12 @@ ALTER TABLE `maestros`
 --
 ALTER TABLE `qr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
