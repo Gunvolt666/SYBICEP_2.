@@ -89,7 +89,7 @@ $(document).on('keyup', '#txt_busqueda', function(e){
 			}
 			else{
 				$('tbody').empty();
-				toast1("Atencion!", "No hay profesores para mostrar", 8000, "error");
+				//toast1("Atencion!", "No hay profesores para mostrar", 8000, "error");
 			}
 		}
 	});

@@ -24,6 +24,7 @@ class Libro extends MySQL
 	public function busqueda($info)
 	{
 		$consulta = "SELECT id_alumno, CONCAT(nombre_libro,''alumno_libro,''dias_pedido) nombre_libro, tipo, alumno_libro, situacion FROM libros WHERE nombre_libro LIKE '%{$info}' OR alumno_libro LIKE '%{$info}%'";
+		
 		return  $this->query_row($consulta);
 	}
 }
