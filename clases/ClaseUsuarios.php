@@ -3,7 +3,7 @@
 include 'MySQLclass.php';
 include 'UsuarioEntidad.php';
 
-class Usuario extends Conexion
+class Usuario extends MySQL
 {
     protected static $cnx;
 
