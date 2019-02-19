@@ -17,7 +17,7 @@ function loadData(){
 	// console.log($('#select_status').val());
 
 	$.ajax({
-		url:'routes/routeUsuarios.php',
+		url:'../routes/routeUsuarios.php',
 		type:'POST',
 		data: {info: filtro, action: "read"},
 		dataType:'JSON',
@@ -53,7 +53,7 @@ function Edit(id_admin){
 
 	
    $.ajax({
-      url: 'routes/routeUsuarios.php',
+      url: '../routes/routeUsuarios.php',
       type: 'post',
       data: 'id_admin'+id_admin,
       success: function(output) 
@@ -79,7 +79,7 @@ $(document).on('change', '#select_status', function(e){
 $(document).on('keyup', '#txt_busqueda', function(e){
 	
 	$.ajax({
-		url:'routes/routeUsuarios.php',
+		url:'../routes/routeUsuarios.php',
 		type:'POST',
 		async: false,
 		data: {info: $(this).val(), action: "busqueda"},

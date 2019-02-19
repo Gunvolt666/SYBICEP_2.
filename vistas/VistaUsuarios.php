@@ -219,11 +219,10 @@
 
       
     
-    <script src="js/jQuery-2.1.4.min.js"></script>
-    <script src="js/jQueryUsuarios.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/VistaUsuarios.js"></script>
-    <script src="js/app.min.js"></script>
-    
+     <script src="../js/jQuery-2.1.4.min.js"></script>
+    <script src="../js/VistaUsuarios.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jQueryUsuarios.js"></script> 
+    <script src="../js/app.min.js"></script>
   </body>
 </html>

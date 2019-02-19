@@ -30,7 +30,7 @@
        
        <div class="select">
          <label>Que carrera cursas</label>
-         <select name="Carrera">
+         <select name="Carrera" id="Carrera">
           <option value="Derecho">Derecho</option>
           <option value="Administracion de Empresas">Administracion de Empresas</option>
           <option value="Ingenieria en Gestion Empresarial">Ingenieria en Gestion Empresarial</option>

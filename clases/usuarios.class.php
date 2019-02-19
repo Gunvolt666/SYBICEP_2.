@@ -9,7 +9,7 @@ class Usuarios extends MySQL
 {
 	public function show($info)
 	{
-		$consulta = "SELECT usuario, nombre FROM administrador";
+		$consulta = "SELECT nombre, usuario, fecha_registro FROM usuarios";
 	}
 	public function read($info)
 	//public function read()
@@ -17,14 +17,14 @@ class Usuarios extends MySQL
 		/*if ($info) {
 			$consulta = "SELECT * FROM alumnos";
 		}*/
-		$consulta = "SELECT * FROM administrador";
+		$consulta = "SELECT * FROM usuarios";
 
 		return $this->query_row($consulta);
 	}
 	public function busqueda($info)
 	{
 
-		$consulta = "SELECT id_admin, CONCAT(usuario,' ',nombre) nombre, usuario FROM administrador WHERE nombre LIKE '%{$info}' OR usuario LIKE '%{$info}%'";
+		$consulta = "SELECT id, CONCAT(nombre,' ',usuario) nombre, usuario, fecha_registro FROM usuarios WHERE nombre LIKE '%{$info}' OR usuario LIKE '%{$info}%'";
 		return  $this->query_row($consulta);
 	}
 	public function Crear()
@@ -34,7 +34,7 @@ class Usuarios extends MySQL
 	public function Editar()
 	{
 		$query = mysql_real_escape_string(htmlentities($_POST['usuario']));
-		mysql_query("UPDATE administrador (usuario, contra_admin, nombre) VALUES ('$usuario', '$contra_admin', '$nombre') WHERE id_admin = '$id_admin'");
+		mysql_query("UPDATE usuarios (usuario, nombre, passwrord) VALUES ('$usuario', '$contra_admin', '$nombre') WHERE id_admin = '$id_admin'");
 	}
 }
 
