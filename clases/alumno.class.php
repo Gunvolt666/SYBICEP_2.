@@ -23,7 +23,8 @@ class Alumno extends MySQL
 	}
 	public function busqueda($info)
 	{
-		$consulta = "SELECT id_alumno, CONCAT(Carrera,''Telefono,''Nombre) Nombre, Telefono, Carrera, usuario_alumno FROM alumnos WHERE Nombre LIKE '%{$info}' OR Telefono LIKE '%{$info}%'";
+		$consulta = "SELECT id_alumno, CONCAT(Carrera,' ',Telefono,' ',Nombre) Nombre, Telefono, Carrera, usuario_alumno FROM alumnos WHERE Nombre LIKE '%{$info}' OR Telefono LIKE '%{$info}%'";
+
 		return  $this->query_row($consulta);
 	}
 }

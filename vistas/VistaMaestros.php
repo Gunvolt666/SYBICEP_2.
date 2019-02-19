@@ -7,17 +7,17 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="css/AdminLTE.min.css">
-    <link href="css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/AdminLTE.min.css">
+    <link href="../css/animate.min.css" rel="stylesheet">
     <link href="plugins/pnotify/pnotify.custom.min.css" rel="stylesheet">
     <link href="plugins/CustomAlerts/css/jquery-confirm.css" rel="stylesheet">
     <link href="css/spinner.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/_all-skins.min.css">
+    <link rel="stylesheet" href="../css/_all-skins.min.css">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="shortcut icon" href="img/favicon.ico">
 

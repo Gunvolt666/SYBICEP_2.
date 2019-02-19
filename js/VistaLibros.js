@@ -22,7 +22,7 @@ function loadData(){
 		data: {info: filtro, action: "read"},
 		dataType:'JSON',
 		beforeSend: function(){
-			
+			alert("filtro");
 			//showSpinner();
 		},
 		error: function(error){
@@ -35,7 +35,7 @@ function loadData(){
 			//removeSpinner();
 
 			if(data != ""){
-				var headers = ["NO.", "NOMBRE", "TELEFONO", "CARRERA", "USUARIO", "OPCIONES"];
+				var headers = ["NO.", "NOMBRE", "TELEFONO", "CARRERA", "USUARIO", ""];
 				jQueryTable("tableContainer", headers, data, 8, "450px", "Persona");
 			  //jQueryTable(id_container, headers, data, LimitRow, maxHeight, NameFunc);
 			}
@@ -63,7 +63,6 @@ $(document).on('change', '#select_status', function(e){
 
 
 $(document).on('keyup', '#txt_busqueda', function(e){
-	alert();
 	$.ajax({
 		url:'../routes/routeLibros.php',
 		type:'POST',
@@ -75,7 +74,7 @@ $(document).on('keyup', '#txt_busqueda', function(e){
 		},
 		error: function(error){
 			console.log(error);
-			//toast1("Error!", error, 8000, "error");
+			toast1("Error!", error, 8000, "error");
 			// removeSpinner();
 		},
 		success: function(data){
@@ -89,7 +88,7 @@ $(document).on('keyup', '#txt_busqueda', function(e){
 			}
 			else{
 				$('tbody').empty();
-				//toast1("Atencion!", "No hay profesores para mostrar", 8000, "error");
+				toast1("Atencion!", "No hay alumnos para mostrar", 8000, "error");
 			}
 		}
 	});
