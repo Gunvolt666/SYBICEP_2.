@@ -14,12 +14,9 @@ class Alumno extends MySQL
 	public function read($info)
 	//public function read()
 	{
-		/*if ($info) {
-			$consulta = "SELECT * FROM alumnos";
-		}*/
-		$consulta = "SELECT * FROM alumnos";
-
-		return $this->query_row($consulta);
+		if ($info == 2) {
+			$consulta = "SELECT * FROM alumnos Nombre, libros nombre_libro WHERE Nombre.Nombre=nombre_libro.nombre_libro AND IF(libro != '') libro, INNER JOIN  "
+		}
 	}
 	public function busqueda($info)
 	{

@@ -14,7 +14,7 @@ if (isset($_POST) && !empty($_POST)) {
 	$resultado = $alumnos->createAlumno($Nombre, $Telefono, $Carrera, $usuario_alumno, $pass_alumno);
 	if ($resultado) {
 		$mensaje = "Se a registrado con exito";
-
+		header("location.href:index.html");
 		$class = "alert alert-success";
 
 	}

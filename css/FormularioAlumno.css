@@ -1,5 +1,5 @@
 body
-{
+{	
 	margin: 0;
 	padding: 0;
 	background:url(libreria.jpg);
@@ -12,11 +12,12 @@ body
 }
 
 .contact-form
-{
+
+{	background: #fff;
 	margin-top: 30px;
 	width: 85%;
 	max-width: 600px;
-	background: #f1f1f1;
+	
 	position: absolute;
 	top: 50%;
 	left: 50%;
