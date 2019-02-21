@@ -1,14 +1,4 @@
 
-<?php
-if (isset($_SESSION["usuario"])) {
-    if ($_SESSION["usuario"]["privilegio"] == 1) {
-        header("location:MenuPrincipal.php");
-    }
-} else {
-    header("location:../LogSistema.php");
-}
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,13 +8,17 @@ if (isset($_SESSION["usuario"])) {
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="css/AdminLTE.min.css">
-    
-    <link rel="stylesheet" href="css/_all-skins.min.css">
+    <link rel="stylesheet" href="../css/AdminLTE.min.css">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../plugins/pnotify/pnotify.custom.min.css" rel="stylesheet">
+    <link href="../plugins/CustomAlerts/css/jquery-confirm.css" rel="stylesheet">
+    <link href="css/spinner.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/_all-skins.min.css">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="shortcut icon" href="img/favicon.ico">
 
@@ -199,11 +193,9 @@ if (isset($_SESSION["usuario"])) {
 
       
     
-    <script src="js/jQuery-2.1.4.min.js"></script>
+    <script src="../js/jQuery-2.1.4.min.js"></script>
     
-    <script src="js/bootstrap.min.js"></script>
-  
-    <script src="js/app.min.js"></script>
-    
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/app.min.js"></script>
   </body>
 </html>

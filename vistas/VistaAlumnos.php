@@ -105,6 +105,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="VistaMaestros.php"><i class="fa fa-circle-o"></i> Maestros</a></li>
+                <li><a href="VistaLibros.php"><i class="fa fa-circle-o"></i>Libros</a></li>
+                 <li><a href="VistaAlumnos.php"><i class="fa fa-circle-o"></i>Usuarios</a></li>
                 
               </ul>
             </li>
