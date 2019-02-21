@@ -8,9 +8,6 @@ $Maestro = new Maestro();
 
 $action = $_POST['action'];	
 
-
-
-
 if (isset($_POST['info'])) {
 	$info = $_POST['info'];
 	switch ($action) {
