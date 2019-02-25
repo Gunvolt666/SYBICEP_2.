@@ -12,7 +12,8 @@ elseif (isset($_POST['usuario']) && isset($_POST['password'])) {
 	$userForm = $_POST['usuario'];
 	$passForm = $_POST['password'];
 	if ($user->usuarioExiste($userForm, $passForm)) {
-		echo "usuario validado";
+		$usuarioSesion->setCurrentUser($userForm);
+		$usuario->setUser($userForm);
 	}
 	else
 	{

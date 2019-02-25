@@ -11,7 +11,7 @@
 <div class="loginbox">
 	<img class="avatar" src="css/New.jpg">
 	<h1>Inicia Sesion aqui!!</h1>
-	<form  action="vistas/MenuPrincipal.php">
+	<form  action="intermedio.php">
 		<p>Tu usuario aqui</p>
 		<input type="text" name="user" placeholder="Ingresa tu Nickname o Usuario">
 		<p>Contraseña</p>
