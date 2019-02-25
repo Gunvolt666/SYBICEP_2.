@@ -1,4 +1,6 @@
-
+<?php
+   include('../clases/usuarios.class.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>

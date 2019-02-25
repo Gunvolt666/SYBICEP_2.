@@ -16,7 +16,9 @@ if (isset($_POST['info'])) {
 		case 'busqueda':
 			echo json_encode($Usuarios->busqueda($info));
 			break;
-		
+		case 'login':
+			echo json_encode($Usuarios->Login($info));
+			break;
 	}
 }
 
