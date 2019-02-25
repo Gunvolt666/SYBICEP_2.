@@ -2,8 +2,8 @@
 
 require_once 'clases/usuarios.class.php';
 
-$userSession = new UserSession();
-$usuario = new Usuario();
+$usuarioSesion = new UsuarioSesion();
+$usuario = new Usuarios();
 
 if (isset($_SESSION['user'])) {
 	echo "Funciona";
