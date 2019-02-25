@@ -11,11 +11,11 @@
 <div class="loginbox">
 	<img class="avatar" src="css/New.jpg">
 	<h1>Inicia Sesion aqui!!</h1>
-	<form  action="">
+	<form  action="vistas/MenuPrincipal.php">
 		<p>Tu usuario aqui</p>
-		<input type="text" name="usuario_alumno" placeholder="Ingresa tu Nickname o Usuario">
+		<input type="text" name="user" placeholder="Ingresa tu Nickname o Usuario">
 		<p>Contraseña</p>
-		<input type="password" name="pass_alumno" placeholder="Ingresa tu contraseña">
+		<input type="password" name="pass" placeholder="Ingresa tu contraseña">
 		<input type="submit" value="Acceder">
 		<a href="#">Olvidaste tu contraseña</a><br>
 		<a href="#">Eres profesor? da click aqui</a>

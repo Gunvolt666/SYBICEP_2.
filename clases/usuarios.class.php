@@ -7,41 +7,7 @@ require_once('MySQLclass.php');
  */
 class Usuarios extends MySQL
 {
-	public function Login($info)
-	{
-		session_start();
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-     
-      
-      $usuario = mysqli_real_escape_string($dbCon,$_POST['usuario']);
-      $contra = mysqli_real_escape_string($db,$_POST['contra']); 
-      
-      $sql = "SELECT id FROM usuarios WHERE usuario = '$usuario' and password = '$contra'";
-      if ($sql = true) {
-
-
-      $result = mysqli_query($dbCon,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $activo = $row['activo'];
-       $count = mysqli_num_rows($result);
-
-
-       if($count == 1) {
-         session_register("usuario");
-         $_SESSION['login_user'] = $usuario;
-         
-         header("location: ../vistas/MenuPrincipal.php");
-      }else {
-         $error = "Usuario no valido";
-      }
-      }
-      else
-      {
-      	echo "Error al seleccionar la Base de datos";
-      }
-   }
-	}
+	
 	public function show($info)
 	{
 		$consulta = "SELECT nombre, usuario, fecha_registro FROM usuarios";
@@ -88,7 +54,7 @@ class Usuarios extends MySQL
 	}
 	public function usuarioAsignado($user)
 	{
-		$query = $this->connect()->prepare("SELECT ^FROM usuarios WHERE usuario = :user");
+		$query = $this->connect()->prepare("SELECT * FROM usuarios WHERE usuario = :user");
 		$query->execute(['user' => $user]);
 
 		foreach ($query as $currentUser => $value) {

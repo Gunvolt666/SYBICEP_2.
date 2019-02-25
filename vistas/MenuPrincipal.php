@@ -1,5 +1,31 @@
 <?php
-   include('../clases/usuarios.class.php');
+
+require_once 'clases/usuarios.class.php';
+
+$usuarioSesion = new UsuarioSesion();
+$usuario = new Usuarios();
+
+if (isset($_SESSION['user'])) {
+  echo "Funciona";
+}
+elseif (isset($_POST['usuario']) && isset($_POST['password'])) {
+  $userForm = $_POST['usuario'];
+  $passForm = $_POST['password'];
+  if ($user->usuarioExiste($userForm, $passForm)) {
+    echo "usuario validado";
+  }
+  else
+  {
+    $errorLogin = "Nombre de usuario y/o password incorrecto";
+    include_once 'logSistema.php';
+  }
+}
+
+else
+{
+  echo "Login";
+  include_once '/vistas/MenuPrincipal.php';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,16 +36,16 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../css/font-awesome.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../css/AdminLTE.min.css">
     <link href="../css/animate.min.css" rel="stylesheet">
-    <link href="../plugins/pnotify/pnotify.custom.min.css" rel="stylesheet">
-    <link href="../plugins/CustomAlerts/css/jquery-confirm.css" rel="stylesheet">
+    <link href="plugins/pnotify/pnotify.custom.min.css" rel="stylesheet">
+    <link href="plugins/CustomAlerts/css/jquery-confirm.css" rel="stylesheet">
     <link href="css/spinner.css" rel="stylesheet">
-
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/_all-skins.min.css">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -53,7 +79,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs"><?php echo $_SESSION['usuario']; echo $_SESSION['nombre'] ;  ?>  </span>
+                  <span class="hidden-xs">  </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->

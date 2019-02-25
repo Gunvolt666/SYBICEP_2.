@@ -16,13 +16,14 @@ elseif (isset($_POST['usuario']) && isset($_POST['password'])) {
 	}
 	else
 	{
-		echo "Algo anda mal";
+		$errorLogin = "Nombre de usuario y/o password incorrecto";
+		include_once 'logSistema.php';
 	}
 }
 
 else
 {
 	echo "Login";
-	include_once 'Screen.php';
+	include_once 'vistas/MenuPrincipal.php';
 }
 ?>
