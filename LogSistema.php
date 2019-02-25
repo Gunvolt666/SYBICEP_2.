@@ -13,9 +13,14 @@
   
   <h2 class="login-header">Iniciar Sesion</h2>
 
-  <form action="metodos/ValidarUsuarios.php" method="POST" class="login-container">
-    <p><input type="text" name="txtUsuario" placeholder="Escribe tu usuario"></p>
-    <p><input type="password" name="txtPassword" placeholder="Escribe tu contraseña"></p>
+  <form action="intermedio.php" method="POST" class="login-container">
+    <?php
+    if (isset($errorLogin)) {
+      echo $errorLogin;
+    }
+    ?>
+    <p><input type="text" name="user" placeholder="Escribe tu usuario"></p>
+    <p><input type="password" name="pass" placeholder="Escribe tu contraseña"></p>
     <p><input type="submit" value="ACCEDER"></p>
   </form>
 </div>

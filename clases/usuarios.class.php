@@ -41,7 +41,7 @@ class Usuarios extends MySQL
 	{
 		$md5pass = md5($pass);
 
-		$query= $this->connect()->prepare("SELECT * FROM usuarios WHERE usuario = :user AND password = :pass");
+		$query= $this->conect()->prepare("SELECT * FROM usuarios WHERE usuario = :user AND password = :pass");
 		$query->execute(['user' => $user, 'pass' => $md5pass]);
 
 		if ($query->rowCount()) {
@@ -54,7 +54,7 @@ class Usuarios extends MySQL
 	}
 	public function usuarioAsignado($user)
 	{
-		$query = $this->connect()->prepare("SELECT * FROM usuarios WHERE usuario = :user");
+		$query = $this->conect()->prepare("SELECT * FROM usuarios WHERE usuario = :user");
 		$query->execute(['user' => $user]);
 
 		foreach ($query as $currentUser => $value) {

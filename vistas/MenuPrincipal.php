@@ -55,7 +55,7 @@ include_once 'intermedio.php';
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs">  </span>
+                  <span class="hidden-xs"> <?php echo $user->getUser(); ?> </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
