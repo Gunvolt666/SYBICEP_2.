@@ -5,7 +5,7 @@ include '../clases/ClaseUsuarios.php';
 class UsuarioControlador
 {
 
-    public static function login($usuario, $password)
+    public static function log($usuario, $password)
     {
         $obj_usuario = new Usuario();
         $obj_usuario->setUsuario($usuario);

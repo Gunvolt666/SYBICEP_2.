@@ -1,11 +1,12 @@
 $(document).on('click','#boton', function(event)
 {
     event.preventDefault();
-   
+   alert("Entro");
    var info = {usuario: $('#usuario').val(), password: $('#password').val()};
 
     $.ajax({
-        url:'routes/routeUsuarios.php',
+
+        url:'routes/routeAlumnos.php',
         type:'POST',
         data: {info: info, action: "login"},
         dataType:'JSON',

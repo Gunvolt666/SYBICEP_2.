@@ -13,9 +13,9 @@
 	<h1>Inicia Sesion aqui!!</h1>
 	<form >
 		<p>Tu usuario aqui</p>
-		<input id="usuario" type="text" name="usuario" placeholder="Ingresa tu Nickname o Usuario">
+		<input autocomplete="foo" id="usuario" type="text" name="usuario" placeholder="Ingresa tu Nickname o Usuario">
 		<p>Contraseña</p>
-		<input id="password" type="password" name="password" placeholder="Ingresa tu contraseña">
+		<input autocomplete="foo" id="password" type="password" name="password" placeholder="Ingresa tu contraseña">
 		<input id="boton" type="submit" value="Acceder">
 		<a href="#">Olvidaste tu contraseña</a><br>
 		<a href="#">Eres profesor? da click aqui</a>

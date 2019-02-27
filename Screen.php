@@ -1,6 +1,8 @@
 <?php
 
+require_once 'clases/alumno.class.php';
 
+session_start();
 ?>
 
 <!doctype html>
@@ -38,7 +40,7 @@
 <a href="#" id="menu-icon"></a>
 
 <ul>
-
+<li><a href=""></a></li>
 <li><a href="#" class="current">INICIO</a></li>
 <li><a href="#">COMO FUNCIONA?</a></li>
 <li><a href="#">LIBROS</a></li>

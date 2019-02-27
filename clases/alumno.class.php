@@ -7,6 +7,8 @@ require_once('MySQLclass.php');
  */
 class Alumno extends MySQL
 {
+	private $nombre;
+	private $usuario;
 	public function show($info)
 	{
 		$consulta = "SELECT * FROM alumnos";
@@ -24,7 +26,6 @@ class Alumno extends MySQL
 		}
 		else
 		{
-			
 			return array('status' => 0);
 		}
 
@@ -42,7 +43,6 @@ class Alumno extends MySQL
 			$_SESSION['usuario'] = $resultado['usuario'];
 
 			return true;
-
 		}
 		else
 			return false;
