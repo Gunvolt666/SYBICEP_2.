@@ -1,46 +1,35 @@
-$(document).ready(function() {
+$(document).on('click','#boton', function(event)
+{
+    event.preventDefault();
+   
+   var info = {usuario: $('#usuario').val(), password: $('#password').val()};
 
-    $("#loginForm").bind("submit", function() {
+    $.ajax({
+        url:'routes/routeUsuarios.php',
+        type:'POST',
+        data: {info: info, action: "login"},
+        dataType:'JSON',
+        beforeSend: function(){
+            alert("filtro");
+            //showSpinner();
+        },
+        error: function(error){
+            console.log(error);
+            //toast1("Error!", error, 8000, "error");
+            //removeSpinner();
+        },
+        success: function(data){
 
-        $.ajax({
-            type: $(this).attr("method"),
-            url: $(this).attr("action"),
-            data: $(this).serialize(),
-            beforeSend: function() {
-                $("#loginForm button[type=submit]").html("enviando...");
-                $("#loginForm button[type=submit]").attr("disabled", "disabled");
-            },
-            success: function(response) {
-                if (response.estado == "true") {
-                    $("body").overhang({
-                        type: "success",
-                        message: "Usuario encontrado, te estamos redirigiendo...",
-                        callback: function() {
-                            window.location.href = "MenuPrincipal.php";
-                        }
-                    });
-                } else {
-                    $("body").overhang({
-                        type: "error",
-                        message: "Usuario o password incorrecto!"
-                    });
-                }
+            console.log(data);
+            //removeSpinner();
 
-                $("#loginForm button[type=submit]").html("Ingresar");
-                $("#loginForm button[type=submit]").removeAttr("disabled");
-            },
-            error: function() {
-                $("body").overhang({
-                    type: "error",
-                    message: "Usuario o password incorrecto!"
-                });
-
-                $("#loginForm button[type=submit]").html("Ingresar");
-                $("#loginForm button[type=submit]").removeAttr("disabled");
+            if(data == true){
+                window.location = 'vistas/MenuPrincipal.php';
             }
-        });
-
-        return false;
+            else{
+               alert("Usuario y/o contraseña incorrectos");
+            }
+        }
     });
-
+    
 });

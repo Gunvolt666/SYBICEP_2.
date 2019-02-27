@@ -6,12 +6,16 @@ $alumnos = new MiDB();
 
 if (isset($_POST) && !empty($_POST)) {
 	$Nombre = $alumnos->escape($_POST['Nombre']);
-	$Carrera = $alumnos->escape($_POST['Carrera']);
-	$Telefono = $alumnos->escape($_POST['Telefono']);
-	$usuario_alumno = $alumnos->escape($_POST['usuario_alumno']);
-	$pass_alumno = $alumnos->escape($_POST['pass_alumno']);
 
-	$resultado = $alumnos->createAlumno($Nombre, $Telefono, $Carrera, $usuario_alumno, $pass_alumno);
+	$Telefono = $alumnos->escape($_POST['Telefono']);
+
+	$Carrera = $alumnos->escape($_POST['Carrera']);
+
+	$usuario = $alumnos->escape($_POST['usuario']);
+	
+	$password = $alumnos->escape($_POST['password']);
+	md5($password);
+	$resultado = $alumnos->createAlumno($Nombre, $Telefono, $Carrera, $usuario, $password);
 	if ($resultado) {
 		$mensaje = "Se a registrado con exito";
 		header("location.href:index.html");

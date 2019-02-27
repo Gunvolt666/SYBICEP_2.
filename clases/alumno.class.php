@@ -12,6 +12,41 @@ class Alumno extends MySQL
 		$consulta = "SELECT * FROM alumnos";
 
 	}
+	private function alumnoExiste($usuario, $password)
+	{
+		
+		$consulta = "SELECT * FROM alumnos WHERE usuario = '$usuario' AND password = '$password'";
+		$query = $this->query_assoc($consulta);
+		if (count($query) > 0) {
+			
+	return array('status' => 1, 'usuario' => $query[0]['usuario'], 'Nombre' => $query[0]['Nombre'], 'id_alumno' => $query[0]['id_alumno']);
+
+		}
+		else
+		{
+			
+			return array('status' => 0);
+		}
+
+	}
+	public function login($info)
+	{
+		$usuario = $info['usuario'];
+		$password = $info['password'];
+		
+		$resultado = $this->alumnoExiste($usuario, $password);
+
+		if ($resultado['status'] == 1) {
+			$_SESSION['id_alumno'] = $resultado['id_alumno'];
+			$_SESSION['Nombre'] = $resultado['Nombre'];
+			$_SESSION['usuario'] = $resultado['usuario'];
+
+			return true;
+
+		}
+		else
+			return false;
+	}
 	public function read($info)
 	//public function read()
 	{

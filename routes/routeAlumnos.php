@@ -20,6 +20,10 @@ if (isset($_POST['info'])) {
 				
 			echo json_encode($Alumno->busqueda($info));
 			break;
+			case 'login':
+				echo json_encode($Alumno->login($info));
+				
+				break;
 		
 	}
 }

@@ -11,15 +11,17 @@
 <div class="loginbox">
 	<img class="avatar" src="css/New.jpg">
 	<h1>Inicia Sesion aqui!!</h1>
-	<form  action=".php">
+	<form >
 		<p>Tu usuario aqui</p>
-		<input type="text" name="user" placeholder="Ingresa tu Nickname o Usuario">
+		<input id="usuario" type="text" name="usuario" placeholder="Ingresa tu Nickname o Usuario">
 		<p>Contraseña</p>
-		<input type="password" name="pass" placeholder="Ingresa tu contraseña">
-		<input type="submit" value="Acceder">
+		<input id="password" type="password" name="password" placeholder="Ingresa tu contraseña">
+		<input id="boton" type="submit" value="Acceder">
 		<a href="#">Olvidaste tu contraseña</a><br>
 		<a href="#">Eres profesor? da click aqui</a>
 	</form>
 </div>
+<script src="js/jQuery-2.1.4.min.js"></script>
+<script src="js/alumnolog.js"></script>
 </body>
 </html>

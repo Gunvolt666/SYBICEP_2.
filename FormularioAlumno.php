@@ -25,7 +25,7 @@
        </div>
        <div class="txtb">
          <label>Número Teléfonico</label>
-         <input type="text" name="Telefono" value="" placeholder="Ingresa tu número de teléfono">
+         <input type="text" name="Telefono"  placeholder="Ingresa tu número de teléfono">
        </div>
        
        <div class="select">
@@ -42,12 +42,12 @@
        </div>
        <div class="txtb">
          <label>Escribe tu usuario para el sistema</label>
-         <input type="text" name="usuario_alumno" value="" placeholder="Nickname">
+         <input type="text" name="usuario" value="" placeholder="Nickname">
        </div>
        
        <div class="txtb">
          <label>Escribe una contraseña para este usuario</label>
-         <input id="contrasena" type="password" name="pass_alumno" value="" placeholder="Contraseña">
+         <input id="contrasena" type="password" name="password" value="" placeholder="Contraseña">
        </div>
        <div class="txtb">
          <label>Confirma tu contraseña</label>

@@ -27,9 +27,12 @@ class MiDB
 		$return = mysqli_real_escape_string($this->conexion, $var);
 		return $return;
 	}
-	public function createAlumno($Nombre, $Carrera, $Telefono, $usuario_alumno, $pass_alumno)
+	public function createAlumno($Nombre, $Telefono, $Carrera, $usuario, $password)
 	{
-		$query = "INSERT INTO alumnos (Nombre, Carrera, Telefono, usuario_alumno, pass_alumno) VALUES ('$Nombre', '$Carrera', '$Telefono', '$usuario_alumno', '$pass_alumno')";
+		$password = md5($_POST['password']);
+		$query = "INSERT INTO alumnos (Nombre, Telefono, Carrera, usuario, password) VALUES ('$Nombre', '$Telefono', '$Carrera', '$usuario', '$password')";
+		
+
 		$resultado = mysqli_query($this->conexion, $query);
 		if ($resultado) {
 			return true;

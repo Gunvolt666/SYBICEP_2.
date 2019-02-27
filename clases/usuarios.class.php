@@ -7,6 +7,28 @@ require_once('MySQLclass.php');
  */
 class Usuarios extends MySQL
 {
+	private $nombre;
+	private $usuario;
+
+	public function login($info)
+	{
+		$usuario = $info['usuario'];
+		$password = $info['password'];
+		
+		$resultado = $this->usuarioExiste($usuario, $password);
+
+		if ($resultado['status'] == 1) {
+			$_SESSION['id'] = $resultado['id'];
+			$_SESSION['nombre'] = $resultado['nombre'];
+			$_SESSION['privilegio'] = $resultado['privilegio'];
+			$_SESSION['usuario'] = $resultado['usuario'];
+
+			return true;
+
+		}
+		else
+			return false;
+	}
 	
 	public function show($info)
 	{
@@ -28,34 +50,40 @@ class Usuarios extends MySQL
 		$consulta = "SELECT id, CONCAT(nombre,' ',usuario) nombre, usuario, fecha_registro FROM usuarios WHERE nombre LIKE '%{$info}' OR usuario LIKE '%{$info}%'";
 		return  $this->query_row($consulta);
 	}
-	public function Crear()
+	public function Crear($usuario, $password, $privilegio, $fecha_registro)
 	{
+		$insertar = "INSERT INTO usuarios (nombre,usuario, password, privilegio) VALUES ('$nombre', '$usuario', '$password', '$privilegio')";
 
-	}
+
+		$md5pass = md5($password);
+		
+		}
 	public function Editar()
 	{
 		$query = mysql_real_escape_string(htmlentities($_POST['usuario']));
 		mysql_query("UPDATE usuarios (usuario, nombre, passwrord) VALUES ('$usuario', '$contra_admin', '$nombre') WHERE id_admin = '$id_admin'");
 	}
-	public function usuarioExiste($user, $pass)
+	private function usuarioExiste($usuario, $password)
 	{
-		$md5pass = md5($pass);
+		
+		$consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND password = '$password'";
+		$query = $this->query_assoc($consulta);
+		if (count($query) > 0) {
+			
+			return array('status' => 1, 'usuario' => $query[0]['usuario'], 'nombre' => $query[0]['nombre'], 'privilegio' => $query[0]['privilegio'], 'id' => $query[0]['id']);
 
-		$query= $this->conect()->prepare("SELECT * FROM usuarios WHERE usuario = :user AND password = :pass");
-		$query->execute(['user' => $user, 'pass' => $md5pass]);
-
-		if ($query->rowCount()) {
-			return true;
 		}
 		else
 		{
-			return false;
+			
+			return array('status' => 0);
 		}
+
 	}
-	public function usuarioAsignado($user)
+	public function usuarioAsignado($usuario, $password)
 	{
-		$query = $this->conect()->prepare("SELECT * FROM usuarios WHERE usuario = :user");
-		$query->execute(['user' => $user]);
+		$query = $this->conect()->prepare("SELECT * FROM usuarios WHERE usuario = :usuario");
+		$query->execute(['usuario' => $usuario]);
 
 		foreach ($query as $currentUser => $value) {
 			$this->nombre = $currentUser['nombre'];
@@ -75,13 +103,13 @@ class UsuarioSesion extends MySQL
 		session_start();
 	}
 
-	public function setCurrentUser($user)
+	public function setCurrentUser($usuario)
 	{
-		$_SESSION['user'] = $user;
+		$_SESSION['usuario'] = $usuario;
 	}
 	public function getCurrentUser()
 	{
-		return $_SESSION['user'];
+		return $_SESSION['usuario'];
 	}
 	public function closeSession()
 	{

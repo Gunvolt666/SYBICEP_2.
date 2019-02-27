@@ -1,28 +1,35 @@
-jQuery(document).on('submit', '#formlogin', function(event)
+$(document).on('click','#boton', function(event)
 {
-event.preventDefault();
+    event.preventDefault();
+   
+   var info = {usuario: $('#usuario').val(), password: $('#password').val()};
 
-jQuery.ajax({
-	url: '../metodos/loginALumno.php',
-	type: 'POST',
-	dataType: 'json',
-	data: $(this).serialize(),
-	beforeSend:function()
-	{
+    $.ajax({
+        url:'routes/routeUsuarios.php',
+        type:'POST',
+        data: {info: info, action: "login"},
+        dataType:'JSON',
+        beforeSend: function(){
+            alert("filtro");
+            //showSpinner();
+        },
+        error: function(error){
+            console.log(error);
+            //toast1("Error!", error, 8000, "error");
+            //removeSpinner();
+        },
+        success: function(data){
 
-	}
-})
-.done(function(respuesta) {
-	console.log(respuesta);
-	if (|respuesta.error) {
-		if (respuesta) {}
-	}
-})
-.fail(function(resp) {
-	console.log(resp.responseText);
-})
-.always(function() {
-	console.log("complete");
+            console.log(data);
+            //removeSpinner();
+
+            if(data == true){
+                window.location = 'Screen.php';
+            }
+            else{
+               alert("Usuario y/o contraseña incorrectos");
+            }
+        }
+    });
+    
 });
-
-})

@@ -44,6 +44,7 @@
 <li><a href="#">LIBROS</a></li>
 <li><a href="#">MIS QR</a></li>
 <li><a href="#">CONTACTO</a></li>
+<li><a href="">CERRAR SESION</a></li>
 
 </ul>
 

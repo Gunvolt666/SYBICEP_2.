@@ -19,11 +19,12 @@
       echo $errorLogin;
     }
     ?>
-    <p><input type="text" name="user" placeholder="Escribe tu usuario"></p>
-    <p><input type="password" name="pass" placeholder="Escribe tu contraseña"></p>
-    <p><input type="submit" value="ACCEDER"></p>
+    <p><input id="usuario" type="text" name="usuario" placeholder="Escribe tu usuario"></p>
+    <p><input id="password" type="password" name="password" placeholder="Escribe tu contraseña"></p>
+    <p><input type="submit" id="boton" value="ACCEDER"></p>
   </form>
 </div>
-
+<script src="js/jQuery-2.1.4.min.js"></script>
+<script src="js/usuarioslog.js"></script>
 </body>
 </html>

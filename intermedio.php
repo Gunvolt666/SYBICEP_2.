@@ -4,32 +4,26 @@ include 'clases/usuarios.class.php';
 
 $usuarioSesion = new UsuarioSesion();
 $usuario = new Usuarios();
-if (isset($_SESSION['usuario'])) {
+ if (isset($_POST['usuario']) && isset($_POST['password'])) {
+  
+  // echo "validacion de Login";
+  $userForm = $_POST['usuario'];
+  $passForm = $_POST['password'];
 
-	echo "Hay sesion";
-	$passForm = $_POST['password'];
+  if($usuario->usuarioExiste($userForm, $passForm)) {
+   echo "usuario validado";
+   $usuarioSession->setCurrentUser($userForm);
+   $usuario->setUser($userForm);
 
-	if ($user->usuarioExiste($userForm, $passForm)) {
-		$usuarioSesion->setCurrentUser($userForm);
-		$usuario->setCurrentUser($userForm);
-
-		include_once 'vistas/MenuPrincipal.php';
+   include_once 'vistas/MenuPrincipal.php';
 	}
 
+   else{
+   // echo "Nombre de usuario y/o password incorrecto";
+   $errorLogin = "Nombre de usuario y/o contraseña es incorrecto";
+   include_once 'LogSistema.php';
+  }
 }
-else
-{
-if ($user->usuarioExiste($userForm, $passForm)) {
-		$usuarioSesion->setCurrentUser($userForm);
-		$usuario->setCurrentUser($userForm);
 
-		include_once 'vistas/MenuPrincipal.php';
-	}
-	else
-	{
-		$errorLogin = "Nombre de usuario y/o contraseña incorrecto";
-		include_once 'LogSistema.php';
-	}	
-}
 
 ?>
