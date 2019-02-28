@@ -1,7 +1,7 @@
 <?php
 
 require_once '../clases/usuarios.class.php';
-require_once '../clases/MySQL.php';
+
 session_start();
 
 $usuario = $_SESSION['usuario'];
@@ -19,7 +19,11 @@ $usuario = $_SESSION['usuario'];
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
    <link rel="stylesheet" href="../css/bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="../css/QR.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+ 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../css/font-awesome.css">
     <!-- Theme style -->
@@ -131,7 +135,7 @@ $usuario = $_SESSION['usuario'];
                 
               </ul>
               <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> QR</a></li>
+                <li><a href="VistaQR.php"><i class="fa fa-circle-o"></i> QR</a></li>
                 
               </ul>
             </li>
@@ -179,43 +183,28 @@ $usuario = $_SESSION['usuario'];
                 <div class="box-body">
                     <div class="row">
                       <div class="col-md-12">
-                        <div class="section">
-
-                    <form name="qrForm">
-                      <span>TypeNumber:</span>
-                      <select name="t"></select>
-                      <span>ErrorCorrectionLevel:</span>
-                      <select name="e">
-                        <option value="L">L(7%)</option>
-                        <option value="M" selected="selected">M(15%)</option>
-                        <option value="Q">Q(25%)</option>
-                        <option value="H">H(30%)</option>
-                      </select>
-                      <span>Mode:</span>
-                      <select name="m">
-                        <option value="Numeric">Numeric</option>
-                        <option value="Alphanumeric">Alphanumeric</option>
-                        <option value="Byte" selected>Byte</option>
-                        <option value="Kanji">Kanji</option>
-                      </select>
-                      <span>Multibyte:</span>
-                      <select name="mb">
-                        <option value="default">None</option>
-                        <option value="SJIS">SJIS</option>
-                        <option value="UTF-8" selected>UTF-8</option>
-                      </select>
-                      <br/>
-                      <textarea name="msg" rows="10" cols="40">here comes qr!</textarea>
-                      <br/>
-                      <input type="button" value="update" onclick="update_qrcode()"/>
-                      <div id="qr"></div>
-                    </form>
-                    <h3>Aun en pruebas</h3>
-                    <div id="dataCaps"></div>
-</div>
-
                               <!--Contenido-->
                               <h3>Contenido</h3>
+                              <div class="panel panel-default">
+<div class="panel-heading">Submit Your Comments</div>
+  <div class="panel-body">
+    <form method="post">
+      <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Subject</label>
+      <textarea name="subject" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+</div>
                               <!--Fin Contenido-->
                            </div>
                         </div>
@@ -240,8 +229,7 @@ $usuario = $_SESSION['usuario'];
       
     
     <script src="../js/jQuery-2.1.4.min.js"></script>
-    <script src="../js/VistaQR.js"></script>
-    <script src="../js/QRLibreria.js"></script>
+    
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/app.min.js"></script>
   </body>

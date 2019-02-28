@@ -19,6 +19,11 @@ $usuario = $_SESSION['usuario'];
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
    <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+ 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../css/font-awesome.css">
     <!-- Theme style -->
@@ -180,47 +185,30 @@ $usuario = $_SESSION['usuario'];
                       <div class="col-md-12">
                               <!--Contenido-->
                               <h3>Contenido</h3>
-                              <CENTER>
-                          <TABLE>
-                          <TR>
-                          <TD>
-                          <CENTER>
-                          <SPAN class= "spanbox" > .Comentarios De Los Usuarios.
-                          </SPAN>
-                          </CENTER>
-                          </TD>
-                          </TR>
-
-                          <TR>
-                          <TD HEIGHT=1 BGCOLOR=black>
-                          </TD>
-                          </TR>
-
-                          <TR>
-                          <TD BGCOLOR="#FEFEFE">
-                          <SPAN STYLE="font-size:11px;font-family:Tahoma;color:black;">
-
-                          <?
-                          $resultComen = mysql_query("SELECT * FROM comentarios WHERE id_noticia='$id' ORDER BY id ASC");
-                          while($rowComen = mysql_fetch_array($resultComen))
-                          {
-                          ?> ;
-                          < FONT COLOR=RED>
-                          < B><? echo $rowComen["nick"]; ?></B>
-                          < /FONT>
-                          :
-                          < ? echo $rowComen["comentario"]; ?>
-                          < BR>
-                          < ?
-                          }
-                          mysql_free_result($resultComen);
-                          ?>
-
-                          </SPAN>
-                          </TD>
-                          </TR>
-                          </TABLE>
-                          </CENTER>
+                                <div class="panel-heading">Comments</div>
+                              <table class="table table-striped"> 
+                                <thead> 
+                                  <tr> 
+                                    <th>#</th> 
+                                    <th>Name</th> 
+                                    <th>Comment</th> 
+                                    <th>Time</th> 
+                                    <th>Status</th> 
+                                    <th>Operations</th> 
+                                  </tr> 
+                                </thead> 
+                                <tbody> 
+                                  <tr> 
+                                    <th scope="row">Comment ID</th> 
+                                    <td>Name</td> 
+                                    <td>Comment</td> 
+                                    <td>Comment Time</td> 
+                                    <td>Comment Status</td> 
+                                    <td><a href="#">Edit</a> <a href="#">App</a> <a href="#">Dis</a> <a href="#">Del</a></td> 
+                                  </tr> 
+                                </tbody> 
+                              </table>
+                            </div>
                               <!--Fin Contenido-->
                            </div>
                         </div>
@@ -245,7 +233,7 @@ $usuario = $_SESSION['usuario'];
       
     
     <script src="../js/jQuery-2.1.4.min.js"></script>
-    
+    <script src="../js/jQueryComentarios.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/app.min.js"></script>
   </body>
