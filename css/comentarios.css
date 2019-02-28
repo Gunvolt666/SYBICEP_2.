@@ -1,0 +1,18 @@
+table 
+{
+	padding: 1px;
+	width: 300px;
+	border-style: 1px solid black;
+}
+td
+{
+	background-color: #fafafa;
+
+}
+.span
+{
+	font-size:11px;
+	font-family:Tahoma;
+	color:black;
+	font-weight:"bold";
+}

@@ -19,6 +19,7 @@ $usuario = $_SESSION['usuario'];
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
    <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../css/QR.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../css/font-awesome.css">
     <!-- Theme style -->
@@ -130,7 +131,7 @@ $usuario = $_SESSION['usuario'];
                 
               </ul>
               <ul class="treeview-menu">
-                <li><a href="VistaQR.php"><i class="fa fa-circle-o"></i> QR</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> QR</a></li>
                 
               </ul>
             </li>
@@ -178,49 +179,43 @@ $usuario = $_SESSION['usuario'];
                 <div class="box-body">
                     <div class="row">
                       <div class="col-md-12">
+                        <div class="section">
+
+                    <form name="qrForm">
+                      <span>TypeNumber:</span>
+                      <select name="t"></select>
+                      <span>ErrorCorrectionLevel:</span>
+                      <select name="e">
+                        <option value="L">L(7%)</option>
+                        <option value="M" selected="selected">M(15%)</option>
+                        <option value="Q">Q(25%)</option>
+                        <option value="H">H(30%)</option>
+                      </select>
+                      <span>Mode:</span>
+                      <select name="m">
+                        <option value="Numeric">Numeric</option>
+                        <option value="Alphanumeric">Alphanumeric</option>
+                        <option value="Byte" selected>Byte</option>
+                        <option value="Kanji">Kanji</option>
+                      </select>
+                      <span>Multibyte:</span>
+                      <select name="mb">
+                        <option value="default">None</option>
+                        <option value="SJIS">SJIS</option>
+                        <option value="UTF-8" selected>UTF-8</option>
+                      </select>
+                      <br/>
+                      <textarea name="msg" rows="10" cols="40">here comes qr!</textarea>
+                      <br/>
+                      <input type="button" value="update" onclick="update_qrcode()"/>
+                      <div id="qr"></div>
+                    </form>
+                    <h3>Aun en pruebas</h3>
+                    <div id="dataCaps"></div>
+</div>
+
                               <!--Contenido-->
                               <h3>Contenido</h3>
-                              <CENTER>
-                          <TABLE>
-                          <TR>
-                          <TD>
-                          <CENTER>
-                          <SPAN class= "spanbox" > .Comentarios De Los Usuarios.
-                          </SPAN>
-                          </CENTER>
-                          </TD>
-                          </TR>
-
-                          <TR>
-                          <TD HEIGHT=1 BGCOLOR=black>
-                          </TD>
-                          </TR>
-
-                          <TR>
-                          <TD BGCOLOR="#FEFEFE">
-                          <SPAN STYLE="font-size:11px;font-family:Tahoma;color:black;">
-
-                          <?
-                          $resultComen = mysql_query("SELECT * FROM comentarios WHERE id_noticia='$id' ORDER BY id ASC");
-                          while($rowComen = mysql_fetch_array($resultComen))
-                          {
-                          ?> ;
-                          < FONT COLOR=RED>
-                          < B><? echo $rowComen["nick"]; ?></B>
-                          < /FONT>
-                          :
-                          < ? echo $rowComen["comentario"]; ?>
-                          < BR>
-                          < ?
-                          }
-                          mysql_free_result($resultComen);
-                          ?>
-
-                          </SPAN>
-                          </TD>
-                          </TR>
-                          </TABLE>
-                          </CENTER>
                               <!--Fin Contenido-->
                            </div>
                         </div>
@@ -245,7 +240,8 @@ $usuario = $_SESSION['usuario'];
       
     
     <script src="../js/jQuery-2.1.4.min.js"></script>
-    
+    <script src="../js/VistaQR.js"></script>
+    <script src="../js/QRLibreria.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/app.min.js"></script>
   </body>
