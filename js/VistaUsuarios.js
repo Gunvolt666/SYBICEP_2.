@@ -35,8 +35,8 @@ function loadData(){
 			//removeSpinner();
 
 			if(data != ""){
-				var headers = ["NO.", "NICKNAME","SU CONTRASEÑA","A QUIEN LE PERTENECE", "OPCIONES"];
-				jQueryTable("tableContainer", headers, data, 8, "450px", "Persona");
+				var headers = ["NO.", "NOMBRE DEL USUARIO","SU USUARIO","CONTRASEÑA","PERFIL","FECHA QUE SE REGISTRO", "OPCIONES"];
+				jQueryTable("tableContainer", headers, data, 8, "430px", "Persona");
 			  //jQueryTable(id_container, headers, data, LimitRow, maxHeight, NameFunc);
 			}
 			else{
@@ -97,8 +97,8 @@ $(document).on('keyup', '#txt_busqueda', function(e){
 			// removeSpinner();
 
 			if(data != ""){
-				var headers = ["NO.", "NICKNAME","SU CONTRASEÑA","A QUIEN LE PERTENECE", "OPCIONES"];
-				jQueryTable("tableContainer", headers, data, 8, "450px", "Persona");
+				var headers = ["NO.", "NOMBRE DEL USUARIO","SU USUARIO","CONTRASEÑA","PERFIL","FECHA QUE SE REGISTRO", "OPCIONES"];
+				jQueryTable("tableContainer", headers, data, 8, "430px", "Persona");
 			  //jQueryTable(id_container, headers, data, LimitRow, maxHeight, NameFunc);
 			}
 			else{

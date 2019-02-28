@@ -190,18 +190,18 @@ $usuario = $_SESSION['usuario'];
   <div class="panel-body">
     <form method="post">
       <div class="form-group">
-      <label for="exampleInputEmail1">Name</label>
-      <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
+      <label for="inputUsuario">Asunto</label>
+      <input type="text" name="name" class="form-control" id="inputUsuario" placeholder="Escriba el asunto">
     </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      <label for="inputUsuario">Seccion</label>
+      <input type="email" name="email" class="form-control" id="inputUsuario" placeholder="Escriba la sección del asunto">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Subject</label>
+      <label for="exampleInputPassword1">Descripcion del problema</label>
       <textarea name="subject" class="form-control" rows="3"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
   </div>
 </div>

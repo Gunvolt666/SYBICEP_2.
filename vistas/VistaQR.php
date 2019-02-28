@@ -1,7 +1,7 @@
 <?php
 
 require_once '../clases/usuarios.class.php';
-require_once '../clases/MySQL.php';
+
 session_start();
 
 $usuario = $_SESSION['usuario'];

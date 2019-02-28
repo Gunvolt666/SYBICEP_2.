@@ -35,7 +35,7 @@ function loadData(){
 			//removeSpinner();
 
 			if(data != ""){
-				var headers = ["NO.", "NOMBRE", "TELEFONO", "CARRERA", "USUARIO", "OPCIONES"];
+				var headers = ["NO.", "NOMBRE DEL PROFESOR","TELEFONO", "CARRERA ","SU USUARIO","SU CONTRASEÑA","FECHA QUE SE REGISTRO", "OPCIONES"];
 				jQueryTable("tableContainer", headers, data, 8, "450px", "Persona");
 			  //jQueryTable(id_container, headers, data, LimitRow, maxHeight, NameFunc);
 			}
