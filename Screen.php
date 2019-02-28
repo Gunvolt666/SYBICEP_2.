@@ -3,6 +3,10 @@
 require_once 'clases/alumno.class.php';
 
 session_start();
+
+$usuario = $_SESSION['usuario'];
+
+
 ?>
 
 <!doctype html>
@@ -40,7 +44,7 @@ session_start();
 <a href="#" id="menu-icon"></a>
 
 <ul>
-<li><a href=""></a></li>
+<li><a href=""><?php echo $usuario; ?></a></li>
 <li><a href="#" class="current">INICIO</a></li>
 <li><a href="#">COMO FUNCIONA?</a></li>
 <li><a href="#">LIBROS</a></li>

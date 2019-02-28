@@ -18,8 +18,7 @@ if (isset($_POST['info'])) {
 			break;
 		case 'login':
 			echo json_encode($Alumno->login($info));
-			echo $info;
-			exit();
+			
 			break;
 			case 'crear':
 			echo json_encode($Alumno->Crear($info));

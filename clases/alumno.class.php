@@ -16,7 +16,7 @@ class Alumno extends MySQL
 	}
 	private function alumnoExiste($usuario, $password)
 	{
-		
+		$password = md5($password);
 		$consulta = "SELECT * FROM alumnos WHERE usuario = '$usuario' AND password = '$password'";
 		$query = $this->query_assoc($consulta);
 		if (count($query) > 0) {
@@ -38,6 +38,7 @@ class Alumno extends MySQL
 		$resultado = $this->alumnoExiste($usuario, $password);
 
 		if ($resultado['status'] == 1) {
+			session_start();
 			$_SESSION['id_alumno'] = $resultado['id_alumno'];
 			$_SESSION['Nombre'] = $resultado['Nombre'];
 			$_SESSION['usuario'] = $resultado['usuario'];

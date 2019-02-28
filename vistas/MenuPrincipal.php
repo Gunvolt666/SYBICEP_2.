@@ -1,3 +1,13 @@
+<?php
+
+require_once '../clases/usuarios.class.php';
+
+session_start();
+
+$usuario = $_SESSION['usuario'];
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -51,7 +61,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs">  </span>
+                  <span class="hidden-xs"> <?php echo $_SESSION['usuario']; ?> </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->

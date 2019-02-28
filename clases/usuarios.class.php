@@ -18,6 +18,7 @@ class Usuarios extends MySQL
 		$resultado = $this->usuarioExiste($usuario, $password);
 
 		if ($resultado['status'] == 1) {
+			session_start();
 			$_SESSION['id'] = $resultado['id'];
 			$_SESSION['nombre'] = $resultado['nombre'];
 			$_SESSION['privilegio'] = $resultado['privilegio'];
